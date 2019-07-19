@@ -13,7 +13,7 @@ header {
 }
 
 body {
-	background-image: url("static/images/home_background.jpg");
+	background-image: url("/static/images/home_background.jpg");
 	background-attachment: fixed;
 	background-size: cover;
 	color: rgba(250, 250, 250, .8);
