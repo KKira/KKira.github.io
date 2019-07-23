@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
   <title>A. Vega</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- CSS stylesheet -->
   <link rel="stylesheet" type="text/css" href="static/css/home.css"/>
@@ -14,37 +14,45 @@
 </head>
 <body>
     <!-- navigation bar -->
-  <ul>
-    <li>
-      <a href="cv.html">CV</a>
-    </li>
-    <li class ="dropdown">
-      <a href="projects.html">Projects</a>
-      <div class="dropdown-content">
-        <a href="casualties_report.html">The Casualties Report</a>
-        <a href="escandalo_purpura.html">Escándalo en Ciudad Púrpura</a>
-        <a href="screen_saver.html">Screen saver App</a>
-        <a href="debt_planner.html">Debt Planner App</a>
-        <a href="mobee_nights.html">Mobee Nights App</a>
-      </div>
-    </li>
-    <li>
+  <div class="row">
+    <div class="col-12 menu">
+    <ul>
+      <li>
+        <a href="cv.html">CV</a>
+      </li>
+      <li class ="dropdown">
+        <a href="projects.html">Projects</a>
+        <div class="dropdown-content">
+          <a href="casualties_report.html">The Casualties Report</a>
+          <a href="escandalo_purpura.html">Escándalo en Ciudad Púrpura</a>
+          <a href="screen_saver.html">Screen saver App</a>
+          <a href="debt_planner.html">Debt Planner App</a>
+          <a href="mobee_nights.html">Mobee Nights App</a>
+       </div>
+      </li>
+      <li>
         <a href="hobbies.html">Hobbies</a>    
-    </li>
-    <li>
-      <a href="contact.html">Contact</a>
-    </li>
-  </ul>
+      </li>
+      <li>
+        <a href="contact.html">Contact</a>
+      </li>
+    </ul>
+  </div>
+  </div>
 
   <!-- portrait -->
-	<header>
-    <img id="selfp" src="static/images/selfp.png"/> Hi, my name is Alberto
-  </header>
+	<div class="col-12">
+    <header>
+      <img id="selfp" src="static/images/selfp.png"/> Hello, my name is Alberto
+    </header>
+  </div>
 
   <!-- introduction -->
+  <div class="col-12">
   <p>I am completing my bachelor's degree in Software Engineering, specializing in games. I helped develop
   two games: The Casualties Report and Escándalo en Ciudad Púrpura. I also performed game testing for two years.</p>
 
   <p>My hobbies involve cooking, sports, streaming, music and manga. Find out more here!</p>
+  </div>
 </body>
 </html>
