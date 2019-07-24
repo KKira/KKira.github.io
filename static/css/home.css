@@ -68,9 +68,12 @@ div.intro{
   list-style-type: none;
   margin: 0;
   padding: 0;
+  overflow: hidden;
+  background-color: #333;
 }
 
 .menu li {
+  float: left;
   padding: 8px;
   margin-bottom: 7px;
   color: #ffffff;
@@ -111,18 +114,6 @@ body {
 	font-size: 22px;
 	color: rgba(255,255,255, 0.8);
 }
-
-/*ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-
-li {
-  float: left;
-}*/
 
 li a, .dropbtn {
   display: inline-block;
