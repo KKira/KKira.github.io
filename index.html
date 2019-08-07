@@ -1,92 +1,68 @@
-
 <html>
-<head>
-  <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
-  <title>A. Vega</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- CSS stylesheet -->
-  <link rel="stylesheet" type="text/css" href="static/css/home.css"/>
-  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <title>A. Vega</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap" rel="stylesheet">
- 
-</head>
-<body>
-  <!-- navigation bar -->
-  <div class="grid-container">
-    <div class="grid-item">
-      <div class="row">
-        <div class="col-12 col-s-12 menu">
-          <ul>
-            <!-- CV -->
-            <li>
-              <a href="cv.html">CV</a>
-            </li>
-            <!--Projects -->
-            <li class ="dropdown">
-              <a href="projects.html">Projects</a>
-              <div class="dropdown-content">
-                <a href="casualties_report.html">The Casualties Report</a>
-                <a href="escandalo_purpura.html">Escándalo en Ciudad Púrpura</a>
-                <a href="screen_saver.html">Screen saver App</a>
-                <a href="debt_planner.html">Debt Planner App</a>
-                <a href="mobee_nights.html">Mobee Nights App</a>
-              </div>
-            </li>
-            <!-- Hobbies: cooking -->
-            <li>
-              <a href="https://www.facebook.com/alberto.vega.3192/media_set?set=a.10150093055826150&type=3"><i class="fas fa-drumstick-bite" style="font-size: 28px"></i>
-              </a>
-            </li>
-            <!-- Hobbies: Manga -->
-            <li>
-              <a href="https://www.mangaupdates.com/mylist.html?id=20832&list=read"><i class="fa fa-book" style ="font-size: 28px;"></i>
-              </a>
-            </li>
-            <!-- Mail -->
-            <li>
-              <a href="mailto:albertovega22@gmail.com"><i class="far fa-envelope" style="font-size: 28px"></i>
-              </a>
-            </li>
-            <!-- Social meida: Instagram-->
-            <li>
-              <a href="https://www.instagram.com/kkiraxxiii/"><i class="fa fa-instagram" style="font-size: 28px"></i>
-              </a>
-            </li>
-            <!-- Social Media: Twitch -->
-            <li>
-              <a href="https://www.twitch.tv/kiraxxiii"><i class="fa fa-twitch" style="font-size: 28px"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <!-- CSS stylesheet -->
+    <link rel="stylesheet" type="text/css" href="static/css/home.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- portrait -->
-    <div class="grid-item">
-      <div class="col-12 col-s-12">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="grid-item">
         <header>
-          <img id="selfp" src="static/images/selfp.png"/> Hello, my name is Alberto
+          <a href="#main-menu"
+             id="main-menu-toggle"
+             class="menu-toggle"
+             aria-label="Open main menu">
+             <span class="sr-only">Open main menu</span>
+             <span class="fa fa-bars" aria-hidden="true"></span>
+          </a>
+
+          <nav id="main-menu" class="main-menu" aria-label="Main menu">
+            <a href="#main-menu-toggle"
+               id="main-menu-close"
+               class="menu-close"
+               aria-label="Close main menu">
+              <span class="sr-only">Close main menu</span>
+              <span class="fa fa-close" aria-hidden="true"></span>
+            </a>
+
+            <ul>
+              <li><a href="cv.html">CV</a></li>
+              <li><a href="projects.html">Projects</a></li>
+              <li><a href="https://www.facebook.com/alberto.vega.3192/media_set?set=a.10150093055826150&type=3">Cooking</a></li>
+              <li><a href="https://www.mangaupdates.com/mylist.html?id=20832&list=read">Manga</a></li>
+              <li><a href="mailto:albertovega22@gmail.com">E-mail</a></li>
+              <li><a href="https://www.instagram.com/kkiraxxiii/">Instagram</a></li>
+              <li><a href="https://www.twitch.tv/kiraxxiii">Twitch</a></li>
+            </ul>
+          </nav>
+
+          <a href="#main-menu-toggle"
+             class="backdrop"
+             tabindex="-1"
+             aria-hidden="true" hidden></a>
         </header>
       </div>
-    </div>
 
-    <!-- introduction -->
-    <div class="grid-item">
-      <p>I am completing my bachelor's degree in Software Engineering, specializing in games.</p>
-      <p>Helped develop two games: The Casualties Report and Escándalo en Ciudad Púrpura.</p>
-      <p>Performed game testing for two years.</p>
-    </div>
+      <div class="grid-item">
+        <h2><img id="selfp" src="static/images/selfp.png"/> Hello, my name is Alberto</h2>
+      </div>
 
-    <!-- hobbies -->
-    <div class="grid-item">
-      <p>My hobbies involve cooking, sports,
-        streaming, music and manga.</p>
+      <div class="grid-item">
+        I am completing my bachelor's degree in Software Engineering, specializing in games.<br>
+        Helped develop two games: The Casualties Report and Escándalo en Ciudad Púrpura.<br>
+        Performed game testing for two years.<br>
+      </div>
+
+      <div class="grid-item">
+        My hobbies involve cooking, sports, streaming, music and manga.
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
