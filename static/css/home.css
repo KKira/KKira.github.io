@@ -17,6 +17,7 @@
   line-height: 1em;
   font-size: 1em;
   color: #333;
+  float: left;
 }
 
 .menu-toggle:hover,
