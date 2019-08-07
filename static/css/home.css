@@ -190,13 +190,13 @@ body {
   background-color: rgba(47,79,79, 0.8);
 
   font-size: 22px;
-  font-family: 'Verdana', serif;
+  font-family: 'Lucida Console', Monaco, monospace;
   color: rgba(255,255,255, 0.8);
 }
 
 h2 {
   font-size: 48pt;
-  font-family: 'Verdana', serif;
+  font-family: 'Lucida Console', Monaco, monospace;
   margin-bottom: 20px;
   margin-top: 20px;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
