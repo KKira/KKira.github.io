@@ -205,7 +205,7 @@ h2 {
   color: rgba(255,255,255, 0.7);
 }
 
-ul {
+ul a,i {
   font-size: 22px;
 }
 
