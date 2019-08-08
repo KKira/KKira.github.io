@@ -3,16 +3,67 @@
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <title>A. Vega</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <!-- CSS stylesheet -->
-    <!-- Font -->
+    <link rel="stylesheet" type="text/css" href="static/css/home.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
   </head>
   <body>
-    <h2>We apologize. This page is under construction.</h2>
-    <!-- add image -->
+    <div class="grid-container">
+      <div class="grid-item">
+        <header>
+          <a href="#main-menu"
+             id="main-menu-toggle"
+             class="menu-toggle"
+             aria-label="Open main menu">
+             <span class="sr-only">Open main menu</span>
+             <span class="fa fa-bars" aria-hidden="true"></span>
+          </a>
 
-    <p>Our most renowned leader has pointed out our mistake. If you would like to check development for this site go to:<br></p>
-    <a href="https://home.avega.tech/">home.avega.tech</a>
+          <nav id="main-menu" class="main-menu" aria-label="Main menu">
+            <a href="#main-menu-toggle"
+               id="main-menu-close"
+               class="menu-close"
+               aria-label="Close main menu">
+              <span class="sr-only">Close main menu</span>
+              <span class="fa fa-close" aria-hidden="true"></span>
+            </a>
+
+            <ul>
+              <li><a href="cv.html" target="_blank">CV</a></li>
+              <li><a href="projects.html" target="_blank">Projects</a></li>
+              <li><a href="mailto:albertovega22@gmail.com"><i class="far fa-envelope" style="font-size: 22px"></i></a></li>
+              <li><a href="https://www.facebook.com/alberto.vega.3192/media_set?set=a.10150093055826150&type=3" target="_blank"><i class="fas fa-drumstick-bite" style="font-size: 22px"></i></a></li>
+              <li><a href="https://www.mangaupdates.com/mylist.html?id=20832&list=read" target="_blank"><i class="fa fa-book" style ="font-size: 22px;"></i></a></li>
+              <li><a href="https://www.twitch.tv/kiraxxiii" target="_blank"><i class='fab fa-twitch'></i></a></li>
+              <li><a href="https://www.instagram.com/kkiraxxiii/" target="_blank"><i class='fab fa-instagram' style="font-size: 22px"></i></a></li>
+            </ul>
+          </nav>
+
+          <a href="#main-menu-toggle"
+             class="backdrop"
+             tabindex="-1"
+             aria-hidden="true" hidden></a>
+        </header>
+      </div>
+
+      <div class="grid-item">
+        <h2><img id="selfp" src="static/images/selfp.png"/> Hello, my name is Alberto</h2>
+      </div>
+
+      <div class="grid-item">
+        I am completing my bachelor's degree in Software Engineering, specializing in games.<br><br>
+        Helped develop two games: <a href="casualties_report.html" target="_blank">The Casualties Report</a> and <a href="escandalo_purpura.html" target="_blank">Escándalo en Ciudad Púrpura</a>.<br><br>
+        Performed game testing for two years.<br><br>
+      </div>
+
+      <div class="grid-item">
+        My hobbies include cooking, manga, streaming, music and sports.
+      </div>
+
+    </div>
   </body>
 </html>
