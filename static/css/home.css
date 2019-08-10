@@ -229,3 +229,7 @@ ul a,i {
   padding: 20px;
   align-content: center;
 }
+
+div.nav-bar {
+  margin: auto;
+}
