@@ -25,4 +25,5 @@ document.getElementById("openDefault").click();
 }
 
 addEventListener("load", defaultEntry);
+}
 

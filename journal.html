@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
@@ -6,10 +7,11 @@
 
 		<!-- CSS stylesheet -->
 		<link rel="stylesheet" type="text/css" href="static/css/home.css"/>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 		<link rel="stylesheet" type="text/css" href="static/css/journal.css"/>
 
 		<script src="static/js/journal.js"></script>
+		<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 	</head>
 	<body>
 		<h2>Journal</h2>
@@ -18,10 +20,12 @@
 		<div class="tab">
 			<button class="tablinks" onclick="openEntry(event, 'entry-0')" id="openDefault">Entry 0</button>
 			<button class="tablinks" onclick="openEntry(event, 'entry-1')">Entry 1</button>
+			<button class="tablinks" onclick="openEntry(event, 'entry-2')">Entry 2</button>
 		</div>
 
 		<!-- Tab content -->
 		<div id="entry-0" class="tabcontent">
+			<span onclick="this.parentElement.style.display='none'" class="topright">X</span>
 			<p>Herein lay my multiple attempts at improvement.<br><br>
 			Just coding for now, other topics may follow.
 
@@ -30,6 +34,33 @@
 		</div>
 
 		<div id="entry-1" class="tabcontent">
+			<button id="myBtn"><i class="fas fa-book" style="font-size:36px"></i></button>
+
+			<div id="myModal" class="modal">
+				<div class="modal-content">
+					<span class="close">X</span>
+					<ul class="notes">
+						<li>Child objects are subject to the transformation of their parent object.<br></li>
+						<li>Create different materials to make the assets distinct.<br></li>
+						<li>An object's orientation is relative to its own local origin (position).<br></li>
+						<li>Using the object's hierarchy to figure out positions around the scene.<br></li>
+						<li>What is a class? - Defines what data objects can contain and what functionality they have.<br></li>
+						<li>Classes can define data and functionality that do not belong to objects, but to the class itself. Used to provide globally-available functionality.<br></li>
+						<li>Default access modifier for classes? - "internal class Clock", which restricts access to the code from the same assembly. Relevant when using packaged code in multiple DLL files.<br></li>
+						<li>What does mono-behavior mean? - When missing, we cannot use the script to create a component in Unity. Unity can only use subtypes of MonoBehaviour to create components. The idea is that we can program our own components to add custom behavior to game objects.<br></li>
+						<li>Doesn't Awake have to be public? - Awake and other methods are special to Unity. It will find them and invoke them when appropriate.<br></li>
+						<li>What is a property? - It is a method that pretends to be a field. Might be read/write-only.<br></li>
+						<li>What is a structure? - A blueprint like a class. Instead it is a simple value like an integer or color instead of an object. It has no sense of identity. Use struct.<br></li>
+						<li>What is a quaternion? - Based on complex numbers to represent 3D rotations. Do not suffer from gimbal lock.<br></li>
+						<li>What's special about constants? - const keywords indicates that a value will never change and does not need to be a field. Its value is computed during compilation and is subsituted for all usage of the constant. Only possible for primitive types like numbers.<br></li>
+						<li>What's local about the rotation? - Refers to the actual rotation of a transform component, independent of its parents. Rotation in the object's local space.<br></li>
+						<li>What's a variable? - Acts like a filed, except it exists only while a method is being executed. It belongs to the method not the class.<br></li>
+						<li>Is single precision enough? - For most games, yes. Becomes a problem when working with very large distances or scale differences.<br><br></li>
+					</ul>
+				</div>
+			</div>
+
+			<span onclick="this.parentElement.style.display='none'" class="topright">X</span>
 			<p>How good can I become at using Unity? Hopefully these tutorials will give me the answer.
 
 			There are two aspects I am exploring here. How can I make these entries journal-like? The other is the organization of my folder structures for the upcoming tutorials. As I am also attempting to give each of these tutorials some sort of unique use, I lose time figuring out the most boring part of this endeavour:
@@ -44,34 +75,89 @@
 
 			The most boring variation I can think of for this tutorial is to make it into a game of stopping the clock at a certain time interval. After what feels an eternity, I manage some sort of project structure. How I miss having two monitors. Things to note while building a clock:<br><br>
 
-			<ul class="notes">
-			<li>Child objects are subject to the transformation of their parent object.<br></li>
-			<li>Create different materials to make the assets distinct.<br></li>
-			<li>An object's orientation is relative to its own local origin (position).<br></li>
-			<li>Using the object's hierarchy to figure out positions around the scene.<br></li>
-			<li>What is a class? - Defines what data objects can contain and what functionality they have.<br></li>
-			<li>Classes can define data and functionality that do not belong to objects, but to the class itself. Used to provide globally-available functionality.<br></li>
-			<li>Default access modifier for classes? - "internal class Clock", which restricts access to the code from the same assembly. Relevant when using packaged code in multiple DLL files.<br></li>
-			<li>What does mono-behavior mean? - When missing, we cannot use the script to create a component in Unity. Unity can only use subtypes of MonoBehaviour to create components. The idea is that we can program our own components to add custom behavior to game objects.<br></li>
-			<li>Doesn't Awake have to be public? - Awake and other methods are special to Unity. It will find them and invoke them when appropriate.<br></li>
-			<li>What is a property? - It is a method that pretends to be a field. Might be read/write-only.<br></li>
-			<li>What is a structure? - A blueprint like a class. Instead it is a simple value like an integer or color instead of an object. It has no sense of identity. Use struct.<br></li>
-			<li>What is a quaternion? - Based on complex numbers to represent 3D rotations. Do not suffer from gimbal lock.<br></li>
-			<li>What's special about constants? - const keywords indicates that a value will never change and does not need to be a field. Its value is computed during compilation and is subsituted for all usage of the constant. Only possible for primitive types like numbers.<br></li>
-			<li>What's local about the rotation? - Refers to the actual rotation of a transform component, independent of its parents. Rotation in the object's local space.<br></li>
-			<li>What's a variable? - Acts like a filed, except it exists only while a method is being executed. It belongs to the method not the class.<br></li>
-			<li>Is single precision enough? - For most games, yes. Becomes a problem when working with very large distances or scale differences.<br><br></li>
-			</ul>
-
 			Aaaand...we are done with the tutorial. Quick refresher, this entry turned out to have a lot of "important notes" which made it less like a journal. For the variation on this tutorial, I will make an obstacle like course. Where the player needs to avoid the hands of the clock as time speeds up! Until next time!</p>
 
 			<video width="400" controls>
 				<source src="static/videos/journal-entry1.mp4" type="video/mp4">
 			</video>
 		</div>
+
+		<div id="entry-2" class="tabcontent">
+			<span onclick="this.parentElement.style.display='none'" class="topright">X</span>
+			<p>"Visualizing Math". A topic I have struggled with in the past. As they say, practice makes good. So, let's be good. I have decided to keep working 	on the tutorials, I will keep the unique twist development as a tertiary goal. No rush, I can only focus on so much at the time, and between improving my skills, developing my website and finding a job...let's just say that adding more concurrent goals can be counter productive. <a href="https://en.wikipedia.org/wiki/Baby_Steps" target="_blank">Baby Steps</a>, also a good manga by the way.<br><br>
+
+			Back to today's topic, Building Graphs. I think it would be neat to make the graphs a road to traverse on. Because the tutorial uses cubes, it works perfectly as an obstacle already. Merely needing a player model that can jump as it moves along the graph.<br><br>
+
+			<img src="static/images/entry-2/entry-2.1.png"><br><br>
+
+			Instantiating cube prefab *robot voice* (insert image). These whole tutorial makes me feel like I am back in class. Shaders! My last encounter with them was not very pleasant. So let's try again!<br><br>
+
+			<img src="static/images/entry-2/objectives.png"><br><br>
+
+			<ul class="notes">
+			<li>At its most fundamental level math is the manipulation of symbols that represent numbers. Solving an equation boils down to rewriting one set of symbols so it becomes another set of symbols.<br></li>
+			<li>f(x) = x + 1 is easy to understand.<br></li>
+			<li>f(x) = (x - 1)^4 + 5x^3 - 8x^2 + 3x is harder.<br></li>
+			<li>To understand the second function better we can represent the input-output pairs as a two-dimensional coordinates in the form: <img src="static/images/entry-2/entry-2.2.png" style="width:50px;height:50px;">. A 2D vector where the top number represents the horizontal coordinate, x axis, and the bottom represents the vertical coordinate, y axis. y = f(x).<br></li>
+			<li>Particle systems or line segments can be used to build graphs. We will use cubes.<br></li>
+			<li>Dragging an object towards the project window will create a prefab. A pre-fabricated game object that exists in the project but not on the scene.<br></li>
+			<li>Changes to the prefabs affects all instances of it in any scene.<br></li>
+			<li>Instances of prefabs use their own position and rotation.<br></li>
+			<li>Game objects can have their properties modified which override the prefabs values. Many changes will break the relation between instance and prefab.<br></li>
+			<li>Instantiating a game object is done via the Instantiate method.<br></li>
+			<li>3D vectors are created with the Vector3 struct. Acts like a value not an object.<br></li>
+			<li>Why i++ and not ++i? - Because we want to increment i after evaluating first.<br></li>
+			<li>Can we change a vector's component individually? - Vector has three floating points x, y z which are public. <br></li>
+			<li>Vector types are mutable in Unity. Mutable Vectors substitute three separete float values, which can be accessed independently, copy and assign them as a group.<br></li>
+			<li>Range is an attribute type defined by Unity. attributes are a way to attach metadata to code structures.<br></li>
+			<li>GPU runs shader programs to render 3D objects.<br></li>
+			<li>How do surface shaders work? - Unity provides a framework to generate shaders that perform lighting calculations which values can be adjusted.<br></li>
+			<li>Albedo - color of the diffuse reflectivity of a material. Descibes how much red, green and blue color channels are diffusely reflected. The rest is absored.<br></li>
+			<li>Alpha - measurement of opacity. At alpha 0 surface is fully transparent while at alpha 1 it is fully opaque.<br></li>
+			<li>Using the tutorial's approach moving the graph would affect its color.<br></li>
+			<li>Because colors cannot be negative, to get transitions from -1 to 1 we have to halve the x coordinates and add 0.5.<br></li>
+			<li>What is Mathf? - It is a struct that contains mathematical functions and constants to work with numbers and vectors.<br></li>
+			<li>Sine wave oscillates between -1 and 1. It repeats every 2 pi units, which is rougly 6.28. <br></li>
+			<li>To see the entire scale X by pi so we end up with f(x) = sin(pix)<br></li>
+			<li>What's a sine wave and pi? - Google it.<br></li>	
+			</ul>
+			</p>
+
+			<video width="400" controls>
+				<source src="static/videos/journal-entry2.mp4" type="video/mp4">
+			</video>
+		</div>
 			
 		<div>
-			<a href="https://github.com/KKira/unity-tutorials"><i class="fa fa-github" style="font-size: 48px"></i></a>
+			<a href="https://github.com/KKira/unity-tutorials"><i class="far fa-github" style="font-size: 48px"></i></a>
 		</div>
+
+		<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
 	</body>
 </html>
