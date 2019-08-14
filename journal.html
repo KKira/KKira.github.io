@@ -7,7 +7,7 @@
     <!-- CSS stylesheet -->
     <link rel="stylesheet" type="text/css" href="static/css/journal.css"/>
 
-    <script src="static/js/journal.js"></script>
+    <script src="static/js/journal.js" defer></script>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
   </head>
@@ -145,31 +145,5 @@
     <div class="icons">
       <a href="https://github.com/KKira/unity-tutorials"><i class="fab fa-github"></i></a>
     </div>
-
-<script>
-  var modalBtns = [...document.querySelectorAll(".button")];
-  modalBtns.forEach(function(btn){
-    btn.onclick = function() {
-      var modal = btn.getAttribute('data-modal');
-      document.getElementById(modal).style.display = "block";
-    }
-  });
-
-  var closeBtns = [...document.querySelectorAll(".close")];
-  closeBtns.forEach(function(btn){
-    btn.onclick = function() {
-      var modal = btn.closest('.modal');
-      modal.style.display = "none";
-    }
-  });
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target.className === "modal") {
-    event.target.style.display = "none";
-  }
-}
-</script>
-
 </body>
 </html>
