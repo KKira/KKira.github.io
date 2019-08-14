@@ -1,6 +1,6 @@
 body {
 	display: block;
-	font-family: 'Verdana'serif;
+	font-family: 'Open Sans', serif;
 	text-align: center;
 
 	background-color: rgba(47,79,79, 0.8);
@@ -27,6 +27,8 @@ body {
 	padding: 20px;
 	border: 1px solid #888;
 	width: 80%;
+	height: 50%;
+	overflow-y: scroll;
 }
 
 .button {
@@ -104,6 +106,7 @@ body {
 ul.notes {
 	text-align: left;
 	color: black;
+	font-family: 'Open Sans', serif;
 }
 
 img {
@@ -122,6 +125,7 @@ h2 {
 	margin-bottom: 20px;
 	margin-top: 20px;
 	text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+	font-family: 'Open Sans', serif;
 }
 
 p {
