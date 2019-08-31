@@ -109,6 +109,12 @@ ul.notes {
 	font-family: 'Open Sans', serif;
 }
 
+img.note-img {
+	width: 100px;
+	height: 50px;
+	margin: auto;
+}
+
 img {
 	width: 350px;
 	height: 150px;

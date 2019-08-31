@@ -20,6 +20,7 @@
       <button class="tablinks" onclick="openEntry(event, 'entry-0')" id="default">Entry 0</button>
       <button class="tablinks" onclick="openEntry(event, 'entry-1')">Entry 1</button>
       <button class="tablinks" onclick="openEntry(event, 'entry-2')">Entry 2</button>
+      <button class="tablinks" onclick="openEntry(event, 'entry-3')">Entry 3</button>
     </div>
 
     <div id="entry-0" class="tabcontent">
@@ -139,6 +140,85 @@
 
       <video width="400" controls>
         <source src="static/videos/journal-entry2.mp4" type="video/mp4">
+      </video>
+    </div>
+
+     <div id="entry-3" class="tabcontent">
+      <span onclick="this.parentElement.style.display='none'" class="topright">X</span>
+      <!-- Trigger/Open The Modal -->
+      <button class="button" data-modal="modalThree"><i class="fas fa-book"></i></button>
+
+      <!-- The Modal -->
+      <div id="modalThree" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <ul class="notes">
+            <li>By default, methods and fields are associated with specific object or value instances of a class or struct type. However, we can indicate that this association does not exist by using the static keyword.</li>
+            <li> Using if else for multifunctions is not convenient. By using a delegate type, you can store references to a method as a variable.</li>
+            <li> Delegate type: define the form of the methods that it can be used for. It is a method's signature, which is defined by its return type and parameter list.</li>
+            <li>Enumerations can be created by defining an enum type. We can use enumaration field to index our array.</li>
+            <li> Does it matter which dimension is used for the outer loop? - No, only the order which the points have been created differs.</li>
+            <li>For the 2D multi-sine function we used three waves: f(x,z,t) = M + Sx + Sz. M, the main wave is slow-moving in a diagonal. Sx is a normal wave and Sz moves fast and has double the frequency. The final wave f(x,z,t) = 4M + Sx + Sz/2 and f(x,z,t) is divided by 5.5 to normalize into the -1-1 range.</li>
+            <li> Creating a ripple on a surface. The ripple spreads in all directions to get a circular pattern. Create a sine wave based on the distance from the origin. This distance can be found using pythogorean theorem a^2 + b^2 = c^2. Where c is the length of the hypotenuse of a right angle triangle. In case of 2D points in the XZ plane, the hypotenuse is the line between the origin and that point. X and Z are the length of the other two sides. Making the distance of each of the points root(x^2 + z^2).<br> 
+            <img src="static/images/entry-3/3.2.png" style="width:200px;height:100px"><br><br></li>
+            <li>By making f(x,z,t) equal this distance, we get a cone<br> 
+            <img src="static/images/entry-3/3.3.png" style="width:200px;height:100px"><br><br></li>
+            <li>By making f(x,z,t) a sine function we get a volcano shape.<br>
+            <img src="static/images/entry-3/3.4.png" style="width:200px;height:100px"><br><br></li>
+            <li>To reduce undulation we can reduce the amplitude of the wave. To mimic a ripple effect we can make it depend on the distance. By using 1/10D the ripple becomes weaker the further away it is. To avoid the amplitude to become extreme near the origin we use 1 / 1+10D</li>
+            <li>The wave moves outwards so we use -t.</li>
+            <li>With the current approach no two points can have the same X and Z coordinates while having a different Y coordinate. The curvature of the surfaces is limited. Their slopes cannot become vertical and they cannot fold backward. We can achieve this by having the function output x, y and z.</li>
+            <li>Because X and Z coordinates of points are no longer constant we cannot rely on their initial values in Update. We have to supply fresh u and v inputs. We can use a double loop. We can then directly assign the result of the function method to the point's position. so we no longer need to retrieve it.</li>
+            <li>The new approach no longer relies on original positions. We no longer need to initialize them in Awake. We can initialize all points and leave their positions unchanged.</li>
+            <li>All points in a circle can be define by<br>
+              [sin(theta)<br>
+               cos(theta)] with theta going from 0 to 2pi.</li>
+            <li>The circle's radius can be adjusted by scaling the amplitude of the sine and cosine by the same amount. R is the circle's radius.</li>
+            <li>What would happen if we used different amplitudes? - You get an ellipse.</li>
+            <li>Creating a sphere: We can reduce the cylinder's radius at its top and bottom to zero. using R = cos(piu/2). We need to add the sine wave to finish the circle, to do this we make Y = sin(piv/2).</li>
+            <li>Using this approach the distribution of points is not uniform. To control the radius of the sphere we adjust the formula to f(u,v) =<br>
+              [S sin(piu)<br>
+               R sin(piv/s)<br>
+               S cos(piu)] where S = Rcos(piv/2) and R is the radius</li>
+            <li>By using this approach we can animate the radius.</li>
+            <li>Creating a Torus: we will create the torus by pulling the sphere apart. We can do that by adding a value to s like 1/2</li>
+            <li>To complete the torus we need to use v to describe the inner circle. This can be done by using piv instead of piv/2</li>
+            <li>How far we pull the sphere apart influences the shape of the torus. It defines the major radius of the torus. Which we designated as R1. f(u,v) =<br>
+              [S sin(piu)<br>
+               sin(piv)<br>
+               S cos(piu) where S = cos(piv) + R1</li>
+            <li>Making R1 greater than 1 makes it a ring torus. The secondary radius of the torus R2 can be changed as well. f(u,v) =<br>
+              [S sin(piu)<br>
+              R2 sin(piu)<br>
+              S cos(piu)] where S = R2 cos(piv) + R1</li>
+          </ul>
+        </div>
+      </div>
+
+      <br><br>
+      <p>A new entry, a new challenge. I spent most of the morning fixing the modals on my journal. Now my "class notes" are displayed separately. "Mathematical Surfaces" is a continuation of the previous tutorial. No new project structures, and all that jazz.<br><br>
+
+      <img src="static/images/entry-3/objectives.png"><br><br>
+
+        Writing is hard. I am lost for words. Between building a website and working on other projects, there are a couple of things that are stuck in my mind.<br><br>
+
+        Responsive design: Still struggling with the implementation, trying to remind myself, mobile first.<br>
+        Screen reader design: Reflecting on accessibility.<br>
+        Math. Math. Math. Math. Math *to the beat of Rihanna's Work*<br>
+        Preparing for code maintenance: As I keep learning more, the quality of my code becomes apparent. So focusing on code structure as I go along is helping to minimize the work done when updating the code. Although, I did have to start my journal.html from scratch, but we do not talk about it.<br><br>
+
+        Told a friend I was revising shaders, he told me to run away and hide. Encouragement! Lower the shields, knowledge incoming!<br><br>
+
+        I think these mathematical functions could be fun as a course to overcome. The player tries to survive the longest<br>
+
+        <img src="static/images/entry-3/3.1.png"><br><br>
+
+        We are done with the tutorial! Took much longer than anticipated. I added a UI menu to switch between the different functions from within the game.</p>
+
+      <video width="400" controls>
+        <source src="static/videos/journal-entry3.mp4" type="video/mp4">
       </video>
     </div>
 
