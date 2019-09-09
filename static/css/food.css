@@ -62,4 +62,5 @@ p {
 img {
 	width: 100%;
 	max-width: 100vh;
+	object-fit: cover;
 }
