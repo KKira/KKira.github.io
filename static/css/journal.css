@@ -155,4 +155,41 @@ div.icons {
 .journal-video {
 	width: 400;
 	max-width: 350;
+	height: 200px;
+}
+
+.scroll {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 80px;
+	justify-items: center;
+	justify-content: center;
+}
+
+.scroll * {
+	text-align: center;
+	display: inline-block;
+	width: 100%;
+}
+
+.scroll img {
+	width: 100%;
+	max-width: 100vh;
+	object-fit: cover;
+	height: 100%;
+	background-color: lightgray;
+}
+
+@media (max-width: 1000px) {
+	.scroll {
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 40px;
+	}
+}
+
+@media (max-width: 500px) {
+	.scroll {
+		grid-template-columns: 1fr;
+		grid-gap: 10px;
+	}
 }
