@@ -21,7 +21,7 @@
 
 .menu-toggle:hover,
 .menu-toggle:focus {
-  color: #c00;
+  color: #6691d9;
 }
 
 /*
@@ -174,7 +174,7 @@
   .main-menu a:hover,
   .main-menu a:focus {
     background: none; /* Remove background from off-canvas styling */
-    color: #c00;
+    color: #6691d9;
   }
 }
 
@@ -232,4 +232,8 @@ ul a,i {
 
 div.nav-bar {
   margin: auto;
+}
+
+.my-games {
+  color: rgba(255, 255, 255, 0.7);
 }
