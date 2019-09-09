@@ -11,21 +11,19 @@
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
 
+    <!--Mathjax-->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   </head>
 
   <body>
-    <h2>Journal</h2>
+    <h2>coding journal</h2>
 
     <!-- Tab links -->
     <div class="tab">
       <button class="tablinks" onclick="openEntry(event, 'entry-0')" id="default">Entry 0</button>
-      <button class="tablinks" onclick="openEntry(event, 'entry-1')">Entry 1</button>
-      <button class="tablinks" onclick="openEntry(event, 'entry-2')">Entry 2</button>
-      <button class="tablinks" onclick="openEntry(event, 'entry-3')">Entry 3</button>
-      <button class="tablinks" onclick="openEntry(event, 'entry-4')">Entry 4</button>
-      <button class="tablinks" onclick="openEntry(event, 'entry-5')">Entry 5</button>
+      <button class="tablinks" onclick="openEntry(event, 'catlikecoding')">Unity</button>
+      <button class="tablinks" onclick="openEntry(event, 'euler')">Project Euler</button>
     </div>
 
     <div id="entry-0" class="tabcontent">
@@ -35,6 +33,17 @@
 
       Welcome to my journal and my thought process. With pictures! <br>
       </p>
+    </div>
+
+    <div id="catlikecoding" class="tabcontent">      
+      <span onclick="this.parentElement.style.display='none'" class="topright">X</span>
+      <div class="tab">
+        <button class="tablinks" onclick="openEntry(event, 'entry-1')">Entry 1</button>
+        <button class="tablinks" onclick="openEntry(event, 'entry-2')">Entry 2</button>
+        <button class="tablinks" onclick="openEntry(event, 'entry-3')">Entry 3</button>
+        <button class="tablinks" onclick="openEntry(event, 'entry-4')">Entry 4</button>
+        <button class="tablinks" onclick="openEntry(event, 'entry-5')">Entry 5</button>
+    </div>
     </div>
 
     <div id="entry-1" class="tabcontent">
