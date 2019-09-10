@@ -180,6 +180,12 @@ div.icons {
 	background-color: lightgray;
 }
 
+img.badges {
+	width: 100%;
+	max-width: 100vh;
+	object-fit: contain;
+}
+
 @media (max-width: 1000px) {
 	.scroll {
 		grid-template-columns: 1fr 1fr;
@@ -193,3 +199,7 @@ div.icons {
 		grid-gap: 10px;
 	}
 }
+
+
+
+
