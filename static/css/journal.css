@@ -180,12 +180,6 @@ div.icons {
 	background-color: lightgray;
 }
 
-img.badges {
-	width: 100%;
-	max-width: 100vh;
-	object-fit: contain;
-}
-
 @media (max-width: 1000px) {
 	.scroll {
 		grid-template-columns: 1fr 1fr;
@@ -200,6 +194,40 @@ img.badges {
 	}
 }
 
+.scroll-sec {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 80px;
+	justify-items: center;
+	justify-content: center;
+}
 
+.scroll-sec * {
+	text-align: center;
+	display: inline-block;
+	width: 100%;
+}
+
+.scroll-sec img {
+	width: 100%;
+	max-width: 100vh;
+	object-fit: contain;
+	height: 200px;
+	background-color: lightgray;
+}
+
+@media (max-width: 1000px) {
+	.scroll-sec {
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-gap: 40px;
+	}
+}
+
+@media (max-width: 500px) {
+	.scroll-sec {
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-gap: 10px;
+	}
+}
 
 
