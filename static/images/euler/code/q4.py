@@ -1,29 +1,22 @@
-def palindrome(value):
-	i = 0
+def is_palindrome(value):
 	input = str(value)
-	temp = []
-	for d in input:
-		temp.append(d)
-	if ( len(temp) == 1):
-		return temp
-	else:
-		j = len(temp)
-	while(temp[i] == temp[j-1]):
-		i += 1
-		j -= 1
-		if (i >= j):
-			return True
+	return (input == input[::-1])
 
-def highest_factor(absolute_factor):
-	variable_factor = absolute_factor
-	new = absolute_factor * variable_factor
-	while( palindrome(new) == None and variable_factor > 99):
-		variable_factor -= 1
-		new = absolute_factor * variable_factor
-		if (palindrome(new) == None and variable_factor == 99):
-			absolute_factor -= 1
-			variable_factor = absolute_factor
-		elif (palindrome(new) == True):
-			return variable_factor, absolute_factor
+def palindrome_generator():
+	palindromes = []
+	new = 0
+	factor1 = 100;
+	factor2 = 100;
+	while ( factor1 < 1000 and factor2 < 1000):
+		new = factor1 * factor2
+		palindromes.append(new)
+		factor1 += 1
+		if (factor1 > 999):
+			factor2 += 1
+			factor1 = factor2
+	return palindromes
 
-print(highest_factor(999))
+print(is_palindrome(9009))
+print(is_palindrome(9990))
+print(max(n for n in palindrome_generator() if is_palindrome(n)))
+
