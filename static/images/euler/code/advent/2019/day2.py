@@ -15,14 +15,10 @@ def read_instructions(instructions):
 		elif instructions[position] == 99:
 			return instructions[0]
 
-instructions = readfile()
-
 for x in range(0, 100):
 	for y in range(0,100):
+		instructions = readfile()
 		instructions[1] = x
 		instructions[2] = y
 		if read_instructions(instructions) == 19690720:
 			print(x, y)
-			break
-		else:
-			instructions = readfile()
