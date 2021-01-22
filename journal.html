@@ -10,17 +10,20 @@
     <script src="static/js/journal.js" defer></script>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+
+    <!--Mathjax-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   </head>
 
   <body>
-    <h2>Journal</h2>
+    <h2>coding journal</h2>
 
     <!-- Tab links -->
     <div class="tab">
       <button class="tablinks" onclick="openEntry(event, 'entry-0')" id="default">Entry 0</button>
-      <button class="tablinks" onclick="openEntry(event, 'entry-1')">Entry 1</button>
-      <button class="tablinks" onclick="openEntry(event, 'entry-2')">Entry 2</button>
-      <button class="tablinks" onclick="openEntry(event, 'entry-3')">Entry 3</button>
+      <button class="tablinks" onclick="openEntry(event, 'unity')">Unity</button>
+      <button class="tablinks" onclick="openEntry(event, 'euler')">Project Euler</button>
     </div>
 
     <div id="entry-0" class="tabcontent">
@@ -30,6 +33,55 @@
 
       Welcome to my journal and my thought process. With pictures! <br>
       </p>
+    </div>
+
+    <div id="unity" class="tabcontent">      
+      <span onclick="this.parentElement.style.display='none'" class="topright">X</span><br><br>
+      <div class="scroll">
+        <video class="journal-video" preload="none" controls>
+          <source src="static/videos/journal-entry1.mp4" type="video/mp4">
+        </video>
+        <button class="tablinks" onclick="openEntry(event, 'entry-1')">
+          <img src="static/images/objectives.png"/>
+        </button>
+
+        <video class="journal-video" preload="none" controls>
+          <source src="static/videos/journal-entry2.mp4" type="video/mp4">
+        </video>
+        <button class="tablinks" onclick="openEntry(event, 'entry-2')">
+          <img src="static/images/entry-2/objectives.png"/>
+        </button>
+
+        <video class="journal-video" preload="none" controls>
+          <source src="static/videos/journal-entry3.mp4" type="video/mp4">
+        </video>
+        <button class="tablinks" onclick="openEntry(event, 'entry-3')">
+          <img src="static/images/entry-3/objectives.png"/>
+        </button>
+
+        <video class="journal-video" preload="none" controls>
+          <source src="static/videos/journal-entry4.1.mp4" type="video/mp4">
+        </video>
+        <button class="tablinks" onclick="openEntry(event, 'entry-4')">
+          <img src="static/images/entry-4/objectives.png">
+        </button>
+
+        <video class="journal-video" preload="none" controls>
+          <source src="static/videos/journal-entry5.mp4" type="video/mp4">
+        </video>
+        <button class="tablinks" onclick="openEntry(event, 'entry-5')">
+          <img src="static/images/entry-5/objectives.png">
+        </button>
+      </div>
+    </div>
+
+    <div id="euler" class="tabcontent">
+      <span onclick="this.parentElement.style.display='none'" class="topright">X</span><br><br>
+        <div class="scroll-sec">
+          <img src="https://projecteuler.net/profile/kiraxxiii.png"/>
+        <img src="static/images/euler/solutions-img/q1.png"/>
+        <a class="links" href="static/images/euler/code/q1.py" target="_blank">Code</a>
+        </div>
     </div>
 
     <div id="entry-1" class="tabcontent">
@@ -75,15 +127,9 @@
 
       As the creeping realization that management might not be my strongest suit, I look over the title of the tutorial: "Game Objects and Scripts", and it involves making a clock. Simple enough.<br><br>
 
-      <img src="static/images/objectives.png"><br><br>
-
       The most boring variation I can think of for this tutorial is to make it into a game of stopping the clock at a certain time interval. After what feels an eternity, I manage some sort of project structure. How I miss having two monitors. Things to note while building a clock:<br><br>
 
       Aaaand...we are done with the tutorial. Quick refresher, this entry turned out to have a lot of "important notes" which made it less like a journal. For the variation on this tutorial, I will make an obstacle like course. Where the player needs to avoid the hands of the clock as time speeds up! Until next time!</p>
-
-      <video width="400" controls>
-        <source src="static/videos/journal-entry1.mp4" type="video/mp4">
-      </video>
     </div>
 
     <div id="entry-2" class="tabcontent">
@@ -99,9 +145,10 @@
           <span class="close">&times;</span>
           <ul class="notes">
             <li>At its most fundamental level math is the manipulation of symbols that represent numbers. Solving an equation boils down to rewriting one set of symbols so it becomes another set of symbols.<br></li>
-            <li>f(x) = x + 1 is easy to understand.<br></li>
-            <li>f(x) = (x - 1)^4 + 5x^3 - 8x^2 + 3x is harder.<br></li>
-            <li>To understand the second function better we can represent the input-output pairs as a two-dimensional coordinates in the form: <img src="static/images/entry-2/entry-2.2.png" style="width:50px;height:50px;">. A 2D vector where the top number represents the horizontal coordinate, x axis, and the bottom represents the vertical coordinate, y axis. y = f(x).<br></li>
+            <li>\(f(x) = x + 1\) is easy to understand.<br></li>
+            <li>\(f(x) = (x - 1)^4 + 5x^3 - 8x^2 + 3x\) is harder.<br></li>
+            <li>To understand the second function better we can represent the input-output pairs as a two-dimensional coordinates in the form: \begin{bmatrix}x\\f(x)\end{bmatrix}
+            A 2D vector where the top number represents the horizontal coordinate, x axis, and the bottom represents the vertical coordinate, y axis. \(y = f(x)\).<br></li>
             <li>Particle systems or line segments can be used to build graphs. We will use cubes.<br></li>
             <li>Dragging an object towards the project window will create a prefab. A pre-fabricated game object that exists in the project but not on the scene.<br></li>
             <li>Changes to the prefabs affects all instances of it in any scene.<br></li>
@@ -120,27 +167,21 @@
             <li>Using the tutorial's approach moving the graph would affect its color.<br></li>
             <li>Because colors cannot be negative, to get transitions from -1 to 1 we have to halve the x coordinates and add 0.5.<br></li>
             <li>What is Mathf? - It is a struct that contains mathematical functions and constants to work with numbers and vectors.<br></li>
-            <li>Sine wave oscillates between -1 and 1. It repeats every 2 pi units, which is rougly 6.28. <br></li>
-            <li>To see the entire range scale X by pi so we end up with f(x) = sin(pix)<br></li>
-            <li>What's a sine wave and pi? - Google it.<br></li>
+            <li>Sine wave oscillates between -1 and 1. It repeats every 2 \(\pi\) units, which is rougly 6.28. <br></li>
+            <li>To see the entire wave scale X by \(\pi\) so we end up with \(f(x) = \sin(\pi x)\)<br></li>
+            <li>What's a sine wave and \(\pi\)? - Google it.<br></li>
           </ul>
         </div>
       </div>
 
       <br><br>
-      <p>"Visualizing Math". A topic I have struggled with in the past. As they say, practice makes good. So, let's be good. I have decided to keep working   on the tutorials, I will keep the unique twist development as a tertiary goal. No rush, I can only focus on so much at the time, and between improving my skills, developing my website and finding a job...let's just say that adding more concurrent goals can be counter productive. <a href="https://en.wikipedia.org/wiki/Baby_Steps" target="_blank">Baby Steps</a>, also a good manga by the way.<br><br>
+      <p>"Visualizing Math". A topic I have struggled with in the past. As they say, practice makes good. So, let's be good. I have decided to keep working   on the tutorials, I will keep the unique twist development as a tertiary goal. No rush, I can only focus on so much at the time, and between improving my skills, developing my website and finding a job...let's just say that adding more concurrent goals can be counter productive. <a class="links" href="https://en.wikipedia.org/wiki/Baby_Steps" target="_blank">Baby Steps</a>, also a good manga by the way.<br><br>
 
       Back to today's topic, Building Graphs. I think it would be neat to make the graphs a road to traverse on. Because the tutorial uses cubes, it works perfectly as an obstacle already. Merely needing a player model that can jump as it moves along the graph.<br><br>
 
       <img src="static/images/entry-2/entry-2.1.png"><br><br>
 
-      Instantiating cube prefab *robot voice*. This tutorial makes me feel like I am back in class. Shaders! My last encounter with them was not very pleasant. So let's try again!<br><br>
-
-      <img src="static/images/entry-2/objectives.png"><br><br>
-
-      <video width="400" controls>
-        <source src="static/videos/journal-entry2.mp4" type="video/mp4">
-      </video>
+      Instantiating cube prefab *robot voice* (insert image). These whole tutorial makes me feel like I am back in class. Shaders! My last encounter with them was not very pleasant. So let's try again!<br><br>
     </div>
 
      <div id="entry-3" class="tabcontent">
@@ -160,47 +201,35 @@
             <li> Delegate type: define the form of the methods that it can be used for. It is a method's signature, which is defined by its return type and parameter list.</li>
             <li>Enumerations can be created by defining an enum type. We can use enumaration field to index our array.</li>
             <li> Does it matter which dimension is used for the outer loop? - No, only the order which the points have been created differs.</li>
-            <li>For the 2D multi-sine function we used three waves: f(x,z,t) = M + Sx + Sz. M, the main wave is slow-moving in a diagonal. Sx is a normal wave and Sz moves fast and has double the frequency. The final wave f(x,z,t) = 4M + Sx + Sz/2 and f(x,z,t) is divided by 5.5 to normalize into the -1-1 range.</li>
-            <li> Creating a ripple on a surface. The ripple spreads in all directions to get a circular pattern. Create a sine wave based on the distance from the origin. This distance can be found using pythogorean theorem a^2 + b^2 = c^2. Where c is the length of the hypotenuse of a right angle triangle. In case of 2D points in the XZ plane, the hypotenuse is the line between the origin and that point. X and Z are the length of the other two sides. Making the distance of each of the points root(x^2 + z^2).<br> 
-            <img src="static/images/entry-3/3.2.png" style="width:200px;height:100px"><br><br></li>
-            <li>By making f(x,z,t) equal this distance, we get a cone<br> 
-            <img src="static/images/entry-3/3.3.png" style="width:200px;height:100px"><br><br></li>
-            <li>By making f(x,z,t) a sine function we get a volcano shape.<br>
-            <img src="static/images/entry-3/3.4.png" style="width:200px;height:100px"><br><br></li>
-            <li>To reduce undulation we can reduce the amplitude of the wave. To mimic a ripple effect we can make it depend on the distance. By using 1/10D the ripple becomes weaker the further away it is. To avoid the amplitude to become extreme near the origin we use 1 / 1+10D</li>
+            <li>For the 2D multi-sine function we used three waves: \(f(x,z,t) = M + Sx + Sz\). M, the main wave is slow-moving in a diagonal. Sx is a normal wave and Sz moves fast and has double the frequency. The final wave \(f(x,z,t) = 4M + Sx + Sz/2\) and \(f(x,z,t)\) is divided by 5.5 to normalize into the -1-1 range.</li>
+            <li> Creating a ripple on a surface. The ripple spreads in all directions to get a circular pattern. Create a sine wave based on the distance from the origin. This distance can be found using pythogorean theorem \(a^2 + b^2 = c^2\). Where c is the length of the hypotenuse of a right angle triangle. In case of 2D points in the XZ plane, the hypotenuse is the line between the origin and that point. X and Z are the length of the other two sides. Making the distance of each of the points \(\sqrt{x^2+z^2}\)<br> 
+            <img class ="modal-img" src="static/images/entry-3/3.2.png"><br><br></li>
+            <li>By making \(f(x,z,t)\) equal this distance, we get a cone<br> 
+            <img class ="modal-img" src="static/images/entry-3/3.3.png"><br><br></li>
+            <li>By making \(f(x,z,t)\) a sine function we get a volcano shape.<br>
+            <img class ="modal-img" src="static/images/entry-3/3.4.png"><br><br></li>
+            <li>To reduce undulation we can reduce the amplitude of the wave. To mimic a ripple effect we can make it depend on the distance. By using \(1 \over 10D\) the ripple becomes weaker the further away it is. To avoid the amplitude to become extreme near the origin we use \(1 \over 1 + 10D\)</li>
             <li>The wave moves outwards so we use -t.</li>
             <li>With the current approach no two points can have the same X and Z coordinates while having a different Y coordinate. The curvature of the surfaces is limited. Their slopes cannot become vertical and they cannot fold backward. We can achieve this by having the function output x, y and z.</li>
             <li>Because X and Z coordinates of points are no longer constant we cannot rely on their initial values in Update. We have to supply fresh u and v inputs. We can use a double loop. We can then directly assign the result of the function method to the point's position. so we no longer need to retrieve it.</li>
             <li>The new approach no longer relies on original positions. We no longer need to initialize them in Awake. We can initialize all points and leave their positions unchanged.</li>
-            <li>All points in a circle can be define by<br>
-              [sin(theta)<br>
-               cos(theta)] with theta going from 0 to 2pi.</li>
+            <li>All points in a circle can be define by: \begin{bmatrix} \sin(\theta) \\ \cos(\theta) \end{bmatrix}<br>
+              with \(\theta\) going from 0 to 2\(\pi\).</li>
             <li>The circle's radius can be adjusted by scaling the amplitude of the sine and cosine by the same amount. R is the circle's radius.</li>
             <li>What would happen if we used different amplitudes? - You get an ellipse.</li>
-            <li>Creating a sphere: We can reduce the cylinder's radius at its top and bottom to zero. using R = cos(piu/2). We need to add the sine wave to finish the circle, to do this we make Y = sin(piv/2).</li>
-            <li>Using this approach the distribution of points is not uniform. To control the radius of the sphere we adjust the formula to f(u,v) =<br>
-              [S sin(piu)<br>
-               R sin(piv/s)<br>
-               S cos(piu)] where S = Rcos(piv/2) and R is the radius</li>
+            <li>Creating a sphere: We can reduce the cylinder's radius at its top and bottom to zero. using \(R = \cos(\pi u/2)\). We need to add the sine wave to finish the circle, to do this we make \(Y = \sin(pi v/2)\).</li>
+            <li>Using this approach the distribution of points is not uniform. To control the radius of the sphere we adjust the formula to \(f(u,v) = \begin{bmatrix} S \sin(\pi u) \\ R \sin(pi v/s) \\ S \cos(\pi u) \end{bmatrix}\) where \(S = R \cos(\pi v/2)\) and R is the radius</li>
             <li>By using this approach we can animate the radius.</li>
-            <li>Creating a Torus: we will create the torus by pulling the sphere apart. We can do that by adding a value to s like 1/2</li>
-            <li>To complete the torus we need to use v to describe the inner circle. This can be done by using piv instead of piv/2</li>
-            <li>How far we pull the sphere apart influences the shape of the torus. It defines the major radius of the torus. Which we designated as R1. f(u,v) =<br>
-              [S sin(piu)<br>
-               sin(piv)<br>
-               S cos(piu) where S = cos(piv) + R1</li>
-            <li>Making R1 greater than 1 makes it a ring torus. The secondary radius of the torus R2 can be changed as well. f(u,v) =<br>
-              [S sin(piu)<br>
-              R2 sin(piu)<br>
-              S cos(piu)] where S = R2 cos(piv) + R1</li>
+            <li>Creating a Torus: we will create the torus by pulling the sphere apart. We can do that by adding a value to s like \(1 \over 2\)</li>
+            <li>To complete the torus we need to use v to describe the inner circle. This can be done by using \(\pi v\) instead of \(\pi v \over 2\)</li>
+            <li>How far we pull the sphere apart influences the shape of the torus. It defines the major radius of the torus. Which we designated as R1. \(f(u,v) = \begin{bmatrix} S \sin(\pi u) \\ \sin (\pi v) \\ S \cos (\pi u) \end{bmatrix}\) where \(S = \cos (\pi v) + R1\)</li>
+            <li>Making R1 greater than 1 makes it a ring torus. The secondary radius of the torus R2 can be changed as well. \(f(u,v) = \begin{bmatrix} S \sin (\pi u) \\ R2 \sin (\pi u) \\ S \cos (\pi u) \end{bmatrix}\) where \(S = R2 \cos (\pi v) + R1\)</li>
           </ul>
         </div>
       </div>
 
       <br><br>
       <p>A new entry, a new challenge. I spent most of the morning fixing the modals on my journal. Now my "class notes" are displayed separately. "Mathematical Surfaces" is a continuation of the previous tutorial. No new project structures, and all that jazz.<br><br>
-
-      <img src="static/images/entry-3/objectives.png"><br><br>
 
         Writing is hard. I am lost for words. Between building a website and working on other projects, there are a couple of things that are stuck in my mind.<br><br>
 
@@ -216,10 +245,134 @@
         <img src="static/images/entry-3/3.1.png"><br><br>
 
         We are done with the tutorial! Took much longer than anticipated. I added a UI menu to switch between the different functions from within the game.</p>
+    </div>
 
-      <video width="400" controls>
-        <source src="static/videos/journal-entry3.mp4" type="video/mp4">
+    <div id="entry-4" class="tabcontent">
+      <span onclick="this.parentElement.style.display='none'" class="topright">X</span>
+      <!-- Trigger/Open The Modal -->
+      <button class="button" data-modal="modalFour"><i class="fas fa-book"></i></button>
+
+      <!-- The Modal -->
+      <div id="modalFour" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <ul class="notes">
+            <li>To create a fractal we use the concept that its details can look exactly like the whole thing.</li>
+            <li>We can apply this to an object's hierarchy in Unity. Start with the root object then add children to it that are smaller but otherwise identical.</li>
+            <li>To make our fractal configurable we add a public mesh and material variable.</li>
+            <li>What's a mesh - mechanically a mesh is a construct used by the graphics hardware to draw complex stuff. A mesh contains at least a collection of points in 3D shapre plus a set of triangles - the most basic 2D shapes - defiens by these points. The triangles constitute the surface of what the mesh represents.</li>
+            <li>Materials are used to define visual properties of objects. They can range from very simple, like a constant color, to very complex. Materials consist of a shader and whatever data the shader needs. Shaders are scripts that tell the graphics card how an object's polygons should be drawn.</li>
+            <li>When is Start invoked? - It is called by Unity after the component is created, once it is active and just before the first time its Update method would be called.</li>
+            <li>How does AddComponent work? - The AddComponent method creates a new component of a certain type, attaches it to the game object, and returns a reference to it. That's why we can access the component's values. It is a generic method, a method template that can work with a range of types, declared between <></li>
+            <li> We can use AddComponent to create the fractal's children</li>
+            <li>To prevent the recursive algorithm from producing a stack overflow or crash we introduce maximum depth. The initial instance will be zero. Its child will have a depth of 1 and so on until max depth is reached.</li>
+            <li>What's this? - The this keyword refers to the current object or struct whose method is being called. It's being used implicitly all the time when referring to stuff from the same class.</li>
+            <li>Use this when you need to pass along a reference to the object itself.</li>
+            <li>Parent-child relationship between game objects is defined by their transformation hierarchy. So a child needs to make the parent of it's transform component equal to it's fractal parent's transform.</li>
+            <li>Coroutines as methods in which you can insert pause statements. The rest of the program continues while the method invocation is paused.</li>
+            <li>What's an enumerator? - Enumeration is the concep of going through some collection one item at a time, like looping over all elements in an array. An enumerator - or iterator - is an object that provides an interface for this functionality. System.Collections.IEnumerator describes such an interface.</li>
+            <li>Coroutine use enumerators.</li>
+            <li>What does yield do? - The yield statement is used by iterators. To make enumaration possible you need to keep track of your progress. When you use yield, an enumerator object is created behind the scenes to take care of the tedious bits. You can yield other iterators.</li>
+            <li>How do coroutines work? - In Unity coroutines are iterators. When you pass it to the StartCoroutine method, it will get stored and gets asked for its next item every frame, until it is finished. The yield statements produce the items. The statements in between are side-effects of the iterator doing its job.</li>
+            <li>The functions we are using are: \(f(0) = 1, f(n) = 5 x f(n-1) + 1\)</li>
+            <li> How does the random range work? - Random is a utility class that contains stuff to create random values. Its Range method can be used to generate a random value within some range. </li>
+            <li> Range has two versions. You can call it with floats, in which case it returns a float between the minimum and maximum value, both inclusive. With integers it returns the minimum inclusive and maximum exclusive. Use case: someArray[Random.Range(0, someArray.Length)].</li>
+            <li>How do arrays work? - Arrays are objects of fixed length that contain a linear sequence of variables.</li>
+            <li>How does a for loop work? - A for loop is a compact way of writing a loop that iterates over something.</li>
+            <li>What does Lerp do? - Lerp is shorthand for linear interpolation. It's typical signature is Lerp(a,b, t) and it computes \(a + (b - a) * t\), with t clamped to the 0-1 range. Multiple versions exist for various types, including floats, vectors and colors.</li>
+            <li>What is dynamic batching? - Dynamic batching is a form of draw call batching performed by Unity. It combines meshes that share the same material into larger meshes. Doing so reduces the amount of communication between the CPU and the GPU. You can enable or disable it via Edit/Project Settings/Player, in the Other Settings group. It only works for small meshes. In Unity, it works for cube, but not with sphere.</li>
+            <li>For dynamic batching to work, the exact same material is used for multiple items. To fix that, we create one duplicate material per depth instead of per cube.</li>
+            <li>What's null? - The default value of a variable that's not a simple value is null. It means the variable doesn't reference anything. Trying to invoke or access anything from a variable that is null results in an error.<br>
+
+            Objects don't automatically cease to exist when setting a reference to them to null. Only when nobody is left referencing them will they be candidates for removal by the garbage collector.<br>
+
+            Works for private component fields but not public. Unity serialization system would create an empty array for it, so it won't be null.</li>
+            <li>Why not make materials static? - Because it depends on the maximum depth, which can be different from fractal to fractal.</li>
+            <li>How do two-dimensional arrays work? - You can add a second dimension to an array by inserting a comma inside its brackets. You then also provide two indexes whenever you want to access one of the array's elements.</li>
+          </ul>
+        </div>
+      </div>
+
+      <br><br>
+      <p>
+        Fractals!, My first encounter with the word was while playing Guild Wars 2. Instances emulating dungeons at a smaller scale.<br><br>
+
+        At school I learnd about their mathematical definition. "a curve or geometric figure, each part of which has the same statistical character as a whole". Fascinating stuff.<br><br>
+
+        <img src="static/images/entry-4/4.1.png"><br><br>
+
+        If I remember correctly, I can export Unity files to web. That could be a fun addition, letting viewers of the site manipulate the fractal.<br><br>      
+
+        <img src="static/images/entry-4/4.2.png"><br><br>
+      </p>
+
+      <video class="journal-video" preload="none" controls>
+        <source src="static/videos/journal-entry4.2.mp4" type="video/mp4">
       </video>
+      <video class="journal-video" preload="none" controls>
+        <source src="static/videos/journal-entry4.3.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div id="entry-5" class="tabcontent">
+      <span onclick="this.parentElement.style.display='none'" class="topright">X</span>
+      <!-- Trigger/Open The Modal -->
+      <button class="button" data-modal="modalFive"><i class="fas fa-book"></i></button>
+
+      <!-- The Modal -->
+      <div id="modalFive" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <ul class="notes">
+            <li>Why use FixedUpdate and not Update? - Using FixedUpdate keeps the spawning independent of the frame rate. If the configured time between spawns is shorter than the frame time using Update would cause spawn delays.</li>
+            <li>Why is motion not fluid for low time scales? - Because fixed time step is constant, the physics system will update less often. Physics objects will remain motionless until a fixed update happens. Which is only once very few frames.<br>
+
+            You can counter this by decreasing the fixed time step as you increase the time scale. You can change the interpolation mode of rigidbody components so they interpolate between phsyics steps, hiding the low update frequency.</li>
+            <li>Turn off vsync to have a better idea of how much CPU resources the scene needs.</li>
+            <li>You can enforce a maximum frate by setting Application.targetFrameRate property. This setting persists in the editor even after exiting play mode. Setting to -1 will remove the limitation.</li>
+            <li>If you want to remove the editor from the performance measurements, you need to make a standalone build with Development Build enabled.</li>
+            <li>Profiler does not give a good measurement of frame rate.</li>
+            <li>How does public int FPS {get; private set;} property work? - Properties are methods that pretend to be a field. We provide the FPS as public information, but only the component itself needs to update the value. The syntax used is shorthand notation for an automatically generated property, which would look something like this.
+              int fps;
+              public int FPS {
+                get { return fps;}
+                private set {fps = value;}
+              }<br>
+
+            This shorthand does not work with Unity's serialization.</li>
+            <li>We measure the frames per second each update by dividing 1 by the unscaled time delta of the current frame. The ptime delta is not the actual time it took to process the last frame, it is influenced by the current time scale. FPS will be wrong unless the time scale is set to 1.</li>
+            <li>By using the following approach, we create a new string object with each update. Which is discarded next update. This pollutes managed memory which will trigger the garbage collector. This could be troublesome for smaller devices. It also pollutes the profiler data. Which makes it harder to find allocations.<br><br>
+
+            void Update() { fpsLabel.text = Mathf.Clamp(fpsCounter.FPS, 0, 99).ToString(); }<br><br>
+
+            To mitigate this problem we create a fixed array of string representations of every number we might need, we have eliminated all temporary string allocations.</li>
+            <li>Updating FPS value each frame will make the label fluctuate constantly when the frame rate isn't stable. Making it hard to get a useful reading.<br>
+
+            A solution is to average the frame rate, smoothing the impact of sudden changes.<br>
+
+            We use a buffer to store the FPS values of multiple frames. Plus an index so we know where to put the data of the next frame.<br>
+
+            Initialize the buffer if this is needed, either because we just started or because frameRange has changed. Then the buffer needs to be updated, after which the average FPS can be calculated.<br>
+
+            Updating the buffer is done by storing the current FPS at the current index, which is then incremented. (fpsBufferIndex++)<br>
+
+            We wrap around the index to the start of the array. So we can override the oldest value with the newest, once the buffer has been filled.</li>
+            <li>By using [SerializeField] and [System.Serializable] we can expose private variables in the Editor.</li>   
+          </ul>
+        </div>
+      </div>
+
+      <br><br>
+      <p>
+        Closing the Basics section of catlikecoding. The last tutorial covers testing performance, using the Unity profiler and building our own frame rate counter.<br><br>
+
+        Testing, testing, testing.<br><br>
+
+        Now that I have completed this last section. I can work on redesigning my website. FPS counter is small but it shows HighestFPS, AverageFPS and LowestFPS. It also changes colors depending on certain ranges. Oops, my background music was recorded on my video.<br><br>
     </div>
 
     <div class="icons">
