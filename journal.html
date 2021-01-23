@@ -49,28 +49,28 @@
           <source src="static/videos/journal-entry2.mp4" type="video/mp4">
         </video>
         <button class="tablinks" onclick="openEntry(event, 'entry-2')">
-          <img src="static/images/entry-2/objectives.png"/>
+          <img src="static/images/entry2/objectives.png"/>
         </button>
 
         <video class="journal-video" preload="none" controls>
           <source src="static/videos/journal-entry3.mp4" type="video/mp4">
         </video>
         <button class="tablinks" onclick="openEntry(event, 'entry-3')">
-          <img src="static/images/entry-3/objectives.png"/>
+          <img src="static/images/entry3/objectives.png"/>
         </button>
 
         <video class="journal-video" preload="none" controls>
           <source src="static/videos/journal-entry4.1.mp4" type="video/mp4">
         </video>
         <button class="tablinks" onclick="openEntry(event, 'entry-4')">
-          <img src="static/images/entry-4/objectives.png">
+          <img src="static/images/entry4/objectives.png">
         </button>
 
         <video class="journal-video" preload="none" controls>
           <source src="static/videos/journal-entry5.mp4" type="video/mp4">
         </video>
         <button class="tablinks" onclick="openEntry(event, 'entry-5')">
-          <img src="static/images/entry-5/objectives.png">
+          <img src="static/images/entry5/objectives.png">
         </button>
       </div>
     </div>
@@ -179,7 +179,7 @@
 
       Back to today's topic, Building Graphs. I think it would be neat to make the graphs a road to traverse on. Because the tutorial uses cubes, it works perfectly as an obstacle already. Merely needing a player model that can jump as it moves along the graph.<br><br>
 
-      <img src="static/images/entry-2/entry-2.1.png"><br><br>
+      <img src="static/images/entry2/entry-2.1.png"><br><br>
 
       Instantiating cube prefab *robot voice* (insert image). These whole tutorial makes me feel like I am back in class. Shaders! My last encounter with them was not very pleasant. So let's try again!<br><br>
     </div>
@@ -203,11 +203,11 @@
             <li> Does it matter which dimension is used for the outer loop? - No, only the order which the points have been created differs.</li>
             <li>For the 2D multi-sine function we used three waves: \(f(x,z,t) = M + Sx + Sz\). M, the main wave is slow-moving in a diagonal. Sx is a normal wave and Sz moves fast and has double the frequency. The final wave \(f(x,z,t) = 4M + Sx + Sz/2\) and \(f(x,z,t)\) is divided by 5.5 to normalize into the -1-1 range.</li>
             <li> Creating a ripple on a surface. The ripple spreads in all directions to get a circular pattern. Create a sine wave based on the distance from the origin. This distance can be found using pythogorean theorem \(a^2 + b^2 = c^2\). Where c is the length of the hypotenuse of a right angle triangle. In case of 2D points in the XZ plane, the hypotenuse is the line between the origin and that point. X and Z are the length of the other two sides. Making the distance of each of the points \(\sqrt{x^2+z^2}\)<br> 
-            <img class ="modal-img" src="static/images/entry-3/3.2.png"><br><br></li>
+            <img class ="modal-img" src="static/images/entry3/3.2.png"><br><br></li>
             <li>By making \(f(x,z,t)\) equal this distance, we get a cone<br> 
-            <img class ="modal-img" src="static/images/entry-3/3.3.png"><br><br></li>
+            <img class ="modal-img" src="static/images/entry3/3.3.png"><br><br></li>
             <li>By making \(f(x,z,t)\) a sine function we get a volcano shape.<br>
-            <img class ="modal-img" src="static/images/entry-3/3.4.png"><br><br></li>
+            <img class ="modal-img" src="static/images/entry3/3.4.png"><br><br></li>
             <li>To reduce undulation we can reduce the amplitude of the wave. To mimic a ripple effect we can make it depend on the distance. By using \(1 \over 10D\) the ripple becomes weaker the further away it is. To avoid the amplitude to become extreme near the origin we use \(1 \over 1 + 10D\)</li>
             <li>The wave moves outwards so we use -t.</li>
             <li>With the current approach no two points can have the same X and Z coordinates while having a different Y coordinate. The curvature of the surfaces is limited. Their slopes cannot become vertical and they cannot fold backward. We can achieve this by having the function output x, y and z.</li>
@@ -242,7 +242,7 @@
 
         I think these mathematical functions could be fun as a course to overcome. The player tries to survive the longest<br>
 
-        <img src="static/images/entry-3/3.1.png"><br><br>
+        <img src="static/images/entry3/3.1.png"><br><br>
 
         We are done with the tutorial! Took much longer than anticipated. I added a UI menu to switch between the different functions from within the game.</p>
     </div>
@@ -301,11 +301,11 @@
 
         At school I learnd about their mathematical definition. "a curve or geometric figure, each part of which has the same statistical character as a whole". Fascinating stuff.<br><br>
 
-        <img src="static/images/entry-4/4.1.png"><br><br>
+        <img src="static/images/entry4/4.1.png"><br><br>
 
         If I remember correctly, I can export Unity files to web. That could be a fun addition, letting viewers of the site manipulate the fractal.<br><br>      
 
-        <img src="static/images/entry-4/4.2.png"><br><br>
+        <img src="static/images/entry4/4.2.png"><br><br>
       </p>
 
       <video class="journal-video" preload="none" controls>
