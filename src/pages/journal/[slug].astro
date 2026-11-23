@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import { Image } from 'astro:assets';
 import 'katex/dist/katex.min.css';
 import Base from '../../layouts/Base.astro';
+import Video from '../../components/Video.astro';
 
 export async function getStaticPaths() {
   const entries = (await getCollection('journal')).sort((a, b) => a.data.order - b.data.order);
@@ -26,7 +27,7 @@ const d = entry.data;
 
     {(d.video || d.objectives) && (
       <div class="intro">
-        {d.video && <video controls preload="none" src={d.video} />}
+        {d.video && <Video src={d.video} title={`${d.title} demo`} preload="none" />}
         {d.objectives && <Image src={d.objectives} alt="Objectives for this entry" width={700} />}
       </div>
     )}

@@ -1,0 +1,52 @@
+---
+// One video player for the whole site.
+// `src` can be:
+//   - a YouTube link in any form (watch?v=…, youtu.be/…, /shorts/…, /embed/…) or a bare 11-character video ID
+//     → embedded with youtube-nocookie.com (no tracking cookies until the visitor presses play)
+//   - any other https:// player URL (e.g. Vimeo) → embedded as is
+//   - a path to a file in /public (e.g. /videos/clip.mp4) → plain <video>
+interface Props {
+  src: string;
+  title: string;
+  preload?: 'none' | 'metadata' | 'auto';
+}
+
+const { src, title, preload = 'metadata' } = Astro.props;
+
+function youtubeId(value: string): string | undefined {
+  if (/^[\w-]{11}$/.test(value)) return value;
+  const m = value.match(
+    /^https?:\/\/(?:www\.|m\.)?(?:youtube(?:-nocookie)?\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/)|youtu\.be\/)([\w-]{11})/,
+  );
+  return m?.[1];
+}
+
+const yt = youtubeId(src);
+const embed = yt ? `https://www.youtube-nocookie.com/embed/${yt}?rel=0` : src.startsWith('https://') ? src : undefined;
+---
+{embed ? (
+  <iframe
+    class="video"
+    src={embed}
+    title={title}
+    loading="lazy"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
+  />
+) : (
+  <video class="video" controls preload={preload} src={src} title={title} />
+)}
+
+<style>
+  .video {
+    display: block;
+    width: 100%;
+    border-radius: var(--radius);
+  }
+  iframe.video {
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: 0;
+  }
+</style>

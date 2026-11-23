@@ -13,7 +13,7 @@ const games = defineCollection({
       platform: z.string().optional(),
       role: z.string().optional(),
       cover: image().optional(),
-      trailer: z.string().optional(), // path under /public or a YouTube embed URL
+      trailer: z.string().optional(), // YouTube link or video ID, other https:// player URL, or a path under /public
       download: z.string().url().optional(),
       play: z.string().url().optional(), // e.g. itch.io page
       team: z.array(z.string()).default([]),
@@ -47,7 +47,7 @@ const journal = defineCollection({
       summary: z.string(),
       series: z.string().optional(),
       objectives: image().optional(),
-      video: z.string().optional(),
+      video: z.string().optional(), // YouTube link or video ID, or a path under /public
     }),
 });
 
