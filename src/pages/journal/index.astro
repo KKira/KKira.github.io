@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+const entries = (await getCollection('journal')).sort((a, b) => a.data.order - b.data.order);
+---
+<Base title="Coding journal" description="Alberto Vega's coding journal">
+  <header class="page-header">
+    <h1>Coding journal</h1>
+    <p class="lead">
+      Herein lay my multiple attempts at improvement. Unity tutorials from
+      <a href="https://catlikecoding.com/unity/tutorials/" target="_blank" rel="noopener">Catlike Coding</a>,
+      each with my own twist. Code on <a href="https://github.com/KKira/unity-tutorials" target="_blank" rel="noopener">GitHub</a>.
+    </p>
+  </header>
+
+  <ol class="entries">
+    {entries.map((e) => (
+      <li>
+        <a class="card" href={`/journal/${e.id}`}>
+          <span class="num">Entry {e.data.order}</span>
+          <h3>{e.data.title}</h3>
+          <p>{e.data.summary}</p>
+        </a>
+      </li>
+    ))}
+  </ol>
+</Base>
+
+<style>
+  .entries {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 1rem;
+    max-width: 760px;
+  }
+  .num {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

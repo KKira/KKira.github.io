@@ -1,0 +1,77 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import selfp from '../assets/selfp.png';
+import { site } from '../config/site';
+
+const sections = [
+  { href: '/portfolio', title: 'Portfolio', text: 'Code, tools and things I have built.' },
+  { href: '/games', title: 'Games', text: 'Games I have made or helped make.' },
+  { href: '/dance', title: 'Dance', text: 'Dance videos and performances.' },
+  { href: '/music', title: 'Music', text: 'Music I make and listen to.' },
+  { href: '/hobbies', title: 'Hobbies', text: 'Cooking, manga, streaming and sports.' },
+  { href: '/journal', title: 'Coding journal', text: 'Learning notes, with pictures.' },
+];
+---
+<Base>
+  <section class="hero">
+    <Image src={selfp} alt="Alberto Vega" width={160} height={160} class="avatar" loading="eager" />
+    <div>
+      <p class="hello">Hello, my name is</p>
+      <h1>{site.name}</h1>
+      <p class="lead">
+        Software engineer with a bachelor's degree specializing in games. I helped develop{' '}
+        <a href="/games/casualties-report">The Casualties Report</a> and{' '}
+        <a href="/games/escandalo-purpura">Escándalo en Ciudad Púrpura</a>, and spent two years in game testing.
+        Off the keyboard: cooking, manga, streaming, music, dance and sports.
+      </p>
+      <div class="actions">
+        <a class="button" href="/cv">View CV <Icon name="arrow" size={18} /></a>
+        <a class="button ghost" href="/portfolio">See my work</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid">
+    {sections.map((s) => (
+      <a class="card" href={s.href}>
+        <h3>{s.title}</h3>
+        <p>{s.text}</p>
+      </a>
+    ))}
+  </section>
+</Base>
+
+<style>
+  .hero {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+    padding: 4rem 0 3rem;
+  }
+  @media (min-width: 720px) {
+    .hero {
+      grid-template-columns: auto 1fr;
+      padding: 5rem 0 4rem;
+    }
+  }
+  .avatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent-soft);
+  }
+  .hello {
+    margin: 0;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+</style>

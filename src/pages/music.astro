@@ -1,0 +1,48 @@
+---
+import Base from '../layouts/Base.astro';
+import { tracks } from '../data/media';
+---
+<Base title="Music" description="Music by Alberto Vega">
+  <header class="page-header">
+    <h1>Music</h1>
+    <p class="lead">Things I make, and things on repeat.</p>
+  </header>
+
+  {tracks.length === 0 ? (
+    <p class="empty">Tracks coming soon.</p>
+  ) : (
+    <div class="tracks">
+      {tracks.map((t) => (
+        <article class="card">
+          <h3>{t.title}</h3>
+          <p>{[t.kind, t.date].filter(Boolean).join(' · ')}</p>
+          {t.embed ? (
+            <iframe src={t.embed} title={t.title} loading="lazy" allow="encrypted-media" />
+          ) : (
+            <audio controls preload="none" src={t.src} />
+          )}
+          {t.note && <p>{t.note}</p>}
+        </article>
+      ))}
+    </div>
+  )}
+</Base>
+
+<style>
+  .tracks {
+    display: grid;
+    gap: 1rem;
+    max-width: 760px;
+  }
+  iframe {
+    width: 100%;
+    height: 152px;
+    border: 0;
+    border-radius: 12px;
+    margin-top: 0.75rem;
+  }
+  audio {
+    width: 100%;
+    margin-top: 0.75rem;
+  }
+</style>
