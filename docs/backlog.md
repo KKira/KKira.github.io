@@ -25,11 +25,5 @@ Add items with `/backlog <idea>` and start work on one with `/startb <number>` i
 ## 8. Journal
 
 ## 9. Hosting & SEO
-- 9.1 Partly done: Move the 21 MB trailer video (`trailer.mp4`, `public/videos/` on the Astro branch) and the other big videos (journal entries) off the repo to YouTube, and embed them.
-  - Done: one `Video` component (`src/components/Video.astro`) plays a YouTube link (any form, or a bare video ID) through youtube-nocookie, another https player URL, or a file in `/public`. Game `trailer:` and journal `video:` already go through it.
-  - Left: upload the 8 videos to YouTube (unlisted is fine), then paste each link and delete the file:
-    - `trailer.mp4` (21 MB) → `trailer:` in `src/content/games/casualties-report.md`
-    - `journal-entry1.mp4`, `-entry2`, `-entry3`, `-entry4.1`, `-entry5` → `video:` in the matching `src/content/journal/0N-*.md`
-    - `journal-entry4.2.mp4`, `-entry4.3` → the two inline `<video>` tags in `04-constructing-a-fractal.md`; replace each with `<iframe src="https://www.youtube-nocookie.com/embed/<ID>" title="..." loading="lazy" allowfullscreen></iframe>`
-    - then remove `public/videos/`. The files stay in git history; a history rewrite would be needed to shrink the clone.
+- 9.1 Done (PR): Videos slimmed down. The 7 journal clips (tutorial screen recordings, ~12 MB) were removed; the Casualties Report trailer stays self-hosted (school project with copyrighted material, which YouTube could take down), re-encoded from 21 MB to 2.9 MB. New `Video` component (`src/components/Video.astro`) embeds YouTube links or IDs through youtube-nocookie for future videos, and still plays files from `/public`. The old files stay in git history.
 - 9.2 Netlify deploy previews for pull requests and branches.

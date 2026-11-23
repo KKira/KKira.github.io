@@ -4,7 +4,6 @@ order: 2
 series: Unity basics
 summary: Visualizing math, prefabs, and a second attempt at shaders.
 objectives: ../../assets/journal/entry2/objectives.png
-video: /videos/journal-entry2.mp4
 ---
 
 "Visualizing Math". A topic I have struggled with in the past. As they say, practice makes good. So, let's be good. I have decided to keep working on the tutorials, I will keep the unique twist development as a tertiary goal. No rush, I can only focus on so much at the time, and between improving my skills, developing my website and finding a job...let's just say that adding more concurrent goals can be counter productive. [Baby Steps](https://en.wikipedia.org/wiki/Baby_Steps), also a good manga by the way.

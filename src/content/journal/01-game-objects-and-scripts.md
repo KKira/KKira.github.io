@@ -4,7 +4,6 @@ order: 1
 series: Unity basics
 summary: Building a clock, and discovering that project management might not be my strongest suit.
 objectives: ../../assets/journal/entry1/objectives.png
-video: /videos/journal-entry1.mp4
 ---
 
 How good can I become at using Unity? Hopefully these tutorials will give me the answer.
