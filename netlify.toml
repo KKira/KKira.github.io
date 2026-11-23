@@ -1,0 +1,65 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Old URLs from the hand-written site keep working.
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/projects"
+  to = "/portfolio"
+  status = 301
+[[redirects]]
+  from = "/projects.html"
+  to = "/portfolio"
+  status = 301
+[[redirects]]
+  from = "/journal.html"
+  to = "/journal"
+  status = 301
+[[redirects]]
+  from = "/food"
+  to = "/hobbies#food"
+  status = 301
+[[redirects]]
+  from = "/food.html"
+  to = "/hobbies#food"
+  status = 301
+[[redirects]]
+  from = "/casualties_report"
+  to = "/games/casualties-report"
+  status = 301
+[[redirects]]
+  from = "/casualties_report.html"
+  to = "/games/casualties-report"
+  status = 301
+[[redirects]]
+  from = "/escandalo_purpura"
+  to = "/games/escandalo-purpura"
+  status = 301
+[[redirects]]
+  from = "/escandalo_purpura.html"
+  to = "/games/escandalo-purpura"
+  status = 301
+[[redirects]]
+  from = "/static/images/avega_cv.pdf"
+  to = "/cv/avega_cv.pdf"
+  status = 301
+[[redirects]]
+  from = "/static/videos/*"
+  to = "/videos/:splat"
+  status = 301
+[[redirects]]
+  from = "/static/images/euler/*"
+  to = "/euler/:splat"
+  status = 301
+
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

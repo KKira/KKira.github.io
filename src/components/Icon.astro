@@ -1,0 +1,49 @@
+---
+// Inline SVG icons. Brand logos come from the simple-icons package,
+// UI icons are small hand-written strokes (Lucide-style).
+import { siGithub, siTwitch, siInstagram, siYoutube, siSpotify } from 'simple-icons';
+
+interface Props {
+  name: string;
+  size?: number;
+  class?: string;
+}
+const { name, size = 20, class: className } = Astro.props;
+
+const brands: Record<string, string> = {
+  github: siGithub.path,
+  twitch: siTwitch.path,
+  instagram: siInstagram.path,
+  youtube: siYoutube.path,
+  spotify: siSpotify.path,
+};
+
+const strokes: Record<string, string> = {
+  mail: '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/>',
+  book: '<path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>',
+  download: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/>',
+  arrow: '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
+  menu: '<path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/>',
+  close: '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
+  external: '<path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>',
+};
+---
+{brands[name] ? (
+  <svg class={className} width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d={brands[name]} />
+  </svg>
+) : (
+  <svg
+    class={className}
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+    set:html={strokes[name] ?? ''}
+  />
+)}

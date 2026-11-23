@@ -1,0 +1,58 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+
+const games = (await getCollection('games')).sort((a, b) => a.data.order - b.data.order);
+---
+<Base title="Games" description="Games made by Alberto Vega">
+  <header class="page-header">
+    <h1>Games</h1>
+    <p class="lead">Games I have made or helped make.</p>
+  </header>
+
+  <div class="grid">
+    {games.map((g) => (
+      <a class="card game" href={`/games/${g.id}`}>
+        {g.data.cover ? (
+          <Image src={g.data.cover} alt="" width={600} class="cover" />
+        ) : (
+          <div class="cover placeholder" aria-hidden="true">{g.data.title}</div>
+        )}
+        <h3>{g.data.title}</h3>
+        <p>{g.data.summary}</p>
+        <ul class="tags">{g.data.tags.map((t) => <li>{t}</li>)}</ul>
+      </a>
+    ))}
+  </div>
+</Base>
+
+<style>
+  .game {
+    padding: 0 0 1.25rem;
+    overflow: hidden;
+  }
+  .game h3,
+  .game p,
+  .game .tags {
+    padding-inline: 1.25rem;
+  }
+  .cover {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  .placeholder {
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--accent);
+    background: linear-gradient(135deg, var(--accent-soft), var(--surface-2));
+  }
+</style>

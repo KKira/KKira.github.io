@@ -1,0 +1,55 @@
+---
+import Base from '../layouts/Base.astro';
+import { dances } from '../data/media';
+---
+<Base title="Dance" description="Dance videos by Alberto Vega">
+  <header class="page-header">
+    <h1>Dance</h1>
+    <p class="lead">Practice, classes and performances.</p>
+  </header>
+
+  {dances.length === 0 ? (
+    <p class="empty">Videos coming soon.</p>
+  ) : (
+    <div class="videos">
+      {dances.map((d) => (
+        <figure class="card">
+          {d.embed ? (
+            <iframe src={d.embed} title={d.title} loading="lazy" allowfullscreen />
+          ) : (
+            <video controls preload="metadata" src={d.src} />
+          )}
+          <figcaption>
+            <h3>{d.title}</h3>
+            <p>{[d.style, d.date].filter(Boolean).join(' · ')}</p>
+            {d.note && <p>{d.note}</p>}
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  )}
+</Base>
+
+<style>
+  .videos {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr));
+  }
+  figure {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  iframe,
+  video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    display: block;
+    background: #000;
+  }
+  figcaption {
+    padding: 1rem 1.25rem 1.25rem;
+  }
+</style>
