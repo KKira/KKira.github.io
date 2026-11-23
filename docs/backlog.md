@@ -26,4 +26,4 @@ Add items with `/backlog <idea>` and start work on one with `/startb <number>` i
 
 ## 9. Hosting & SEO
 - 9.1 Move the 21 MB trailer video (`trailer.mp4`, `public/videos/` on the Astro branch) and the other big videos (journal entries) off the repo to YouTube, and embed them.
-- 9.2 Netlify deploy previews for pull requests and branches.
+- 9.2 Partly done: Netlify deploy previews for pull requests and branches. Pull request previews work (Netlify posts the link on each pull request, noindexed) and are documented in the README and `netlify.toml`. Left: switch on branch deploys in the Netlify dashboard (Branch deploys: All); the owner does that.
