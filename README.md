@@ -16,6 +16,8 @@ Netlify deploys `master` to https://avega.dev. Every pull request into `master` 
 
 **Branch deploys** (a preview for every pushed branch, even without a pull request) are switched on in the Netlify dashboard, not in the repo: *Project configuration → Build & deploy → Continuous deployment → Branches and deploy contexts → Branch deploys: All*. The URL is then `https://<branch with / as ->--quirky-goldwasser-4e5c20.netlify.app`, e.g. `feature-9-2-netlify-deploy-previews--quirky-goldwasser-4e5c20.netlify.app`.
 
+To get the link for the branch you are on, run `/preview` (it pushes the branch and prints the Deploy Preview or branch deploy URL).
+
 Previews are not indexed by search engines (Netlify sends `X-Robots-Tag: noindex`), and their canonical links point to avega.dev.
 
 ## Add content
