@@ -4,7 +4,6 @@ order: 4
 series: Unity basics
 summary: Recursion, coroutines and dynamic batching. Fractals, from Guild Wars 2 to the classroom.
 objectives: ../../assets/journal/entry4/objectives.png
-video: /videos/journal-entry4.1.mp4
 ---
 
 Fractals! My first encounter with the word was while playing Guild Wars 2. Instances emulating dungeons at a smaller scale.
@@ -16,10 +15,6 @@ At school I learned about their mathematical definition. "A curve or geometric f
 If I remember correctly, I can export Unity files to web. That could be a fun addition, letting viewers of the site manipulate the fractal.
 
 ![Fractal variation](../../assets/journal/entry4/4.2.png)
-
-<video preload="none" controls src="/videos/journal-entry4.2.mp4"></video>
-
-<video preload="none" controls src="/videos/journal-entry4.3.mp4"></video>
 
 <details>
 <summary>Class notes</summary>

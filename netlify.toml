@@ -5,6 +5,15 @@
 [build.environment]
   NODE_VERSION = "22"
 
+# Deploy contexts. Production = master -> https://avega.dev.
+# Every pull request gets a Deploy Preview at
+#   https://deploy-preview-<PR number>--quirky-goldwasser-4e5c20.netlify.app
+# and, once branch deploys are on (Netlify: Project configuration > Build & deploy >
+# Continuous deployment > Branches and deploy contexts > Branch deploys: All),
+# every pushed branch gets https://<branch, "/" -> "-">--quirky-goldwasser-4e5c20.netlify.app
+# Netlify adds "X-Robots-Tag: noindex" to previews, so they stay out of search results.
+# They build exactly like production (same command, same Node), so nothing to override here.
+
 # Old URLs from the hand-written site keep working.
 [[redirects]]
   from = "/index.html"

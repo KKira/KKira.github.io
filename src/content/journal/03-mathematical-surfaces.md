@@ -4,7 +4,6 @@ order: 3
 series: Unity basics
 summary: Ripples, spheres and tori, plus thoughts on responsive design, accessibility and maintainable code.
 objectives: ../../assets/journal/entry3/objectives.png
-video: /videos/journal-entry3.mp4
 ---
 
 A new entry, a new challenge. I spent most of the morning fixing the modals on my journal. Now my "class notes" are displayed separately. "Mathematical Surfaces" is a continuation of the previous tutorial. No new project structures, and all that jazz.

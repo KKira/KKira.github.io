@@ -4,7 +4,6 @@ order: 5
 series: Unity basics
 summary: Closing the Catlike Coding basics with the profiler and a home-made FPS counter.
 objectives: ../../assets/journal/entry5/objectives.png
-video: /videos/journal-entry5.mp4
 ---
 
 Closing the Basics section of Catlike Coding. The last tutorial covers testing performance, using the Unity profiler and building our own frame rate counter.

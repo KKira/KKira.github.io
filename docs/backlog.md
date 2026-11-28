@@ -25,5 +25,5 @@ Add items with `/backlog <idea>` and start work on one with `/startb <number>` i
 ## 8. Journal
 
 ## 9. Hosting & SEO
-- 9.1 Move the 21 MB trailer video (`trailer.mp4`, `public/videos/` on the Astro branch) and the other big videos (journal entries) off the repo to YouTube, and embed them.
-- 9.2 Netlify deploy previews for pull requests and branches.
+- 9.1 Done (PR): Videos slimmed down. The 7 journal clips (tutorial screen recordings, ~12 MB) were removed; the Casualties Report trailer stays self-hosted (school project with copyrighted material, which YouTube could take down), re-encoded from 21 MB to 2.9 MB. New `Video` component (`src/components/Video.astro`) embeds YouTube links or IDs through youtube-nocookie for future videos, and still plays files from `/public`. The old files stay in git history.
+- 9.2 Partly done: Netlify deploy previews for pull requests and branches. Pull request previews work (Netlify posts the link on each pull request, noindexed) and are documented in the README and `netlify.toml`. Left: switch on branch deploys in the Netlify dashboard (Branch deploys: All); the owner does that.
