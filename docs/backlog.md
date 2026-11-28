@@ -6,6 +6,9 @@ Add items with `/backlog <idea>` and start work on one with `/startb <number>` i
 ## 1. Site & design
 - 1.1 Partly done: rebuild the site with Astro. In progress on branch `astro-redesign` in the Main live session.
 - 1.2 Custom 404 page.
+- 1.3 Dark mode button in the site header (`src/layouts/Base.astro`). Starts from the device setting, remembers the choice, and doesn't flash the wrong theme on reload (inline script in `<head>`). `global.css` already supports `data-theme` light/dark.
+- 1.4 Version badge: a small `vX.Y.Z` pill in the header next to the dark mode button, taken from `package.json` (the site has no version yet).
+- 1.5 Release notes popup: clicking the version badge opens the notes per version, newest first; closes with ×, Esc or a click outside. Notes live in one file in the repo, and `/mp` updates it on each release. Reference: Ekeko's `#ver` button and popup.
 
 ## 2. CV
 - 2.1 Add GitHub and LinkedIn links to the CV.
